@@ -4,15 +4,16 @@ int deletenumber(int number[],int n)
 {
   if(n==0)
   {
-      printf("Sorry!No number is left to delete.");
+      printf("Sorry! No number is left to delete.");
       return n;
   }
   else
   {
-      printf("The last number you have entered %d is deleted successfully.",number[n]);
+      printf("The last number you have entered %d is deleted successfully.\n", number[n-1]);
       return n;
   }
 }
+
 void show(int number[],int n)
 {
    if(n==0)
@@ -22,14 +23,16 @@ void show(int number[],int n)
    
    else
    {
-       printf("\nYou updated entries are:");
+       printf("\n-----------------------------\n"); 
+       printf("\nYou updated entries are:\n\n");
         for (int i = 0; i < n; i++)
         {
-            printf(" %d", number[i]);
+            printf("Number %d: %d\n", i + 1, number[i]);
         }
-        printf("\n");
+         printf("\n-----------------------------\n");
    }
 }
+
 int insertprogram(int number[],int n)
 
 {
@@ -51,8 +54,7 @@ int insertprogram(int number[],int n)
 
 void exitprogram()
 {
-  
-    printf("----------You have exited successfully----------");
+      printf("\nYou have exited successfully...\n");
 }
 
 int main()
@@ -61,30 +63,23 @@ int main()
     int number[5];
     int n=5;
 
-    printf("Enter any 5 numbers accouding to your choice.\n");
+    printf("\nEnter any 5 numbers according to your choice.\n\n");
     
     for(int i=0;i<5;i++)
     {
 
-        printf("Enter your %d number:",i+1);
+        printf("Please enter number %d: ", i + 1);
         scanf("%d",&number[i]);
     }
-    
-    printf("You have entered:");
-    for(int i=0;i<5;i++)
-    {
-        printf(" , %d",number[i]);
-    } 
-    
-    while(1)
-    
+
+    while(1)  
   {
-    printf("\n\nMark your chooice:\n");
-    
-    printf("\n 1. Delete a number.\n 2. View numbers \n 3. Insert a new choice\n 4. Exit");
-    
-    printf("\nEnter your choice here:");
+    printf("\n===== Menu =====\n");
+    printf("\n1. Delete a number \n2. View numbers \n3. Insert a new choice \n4. Exit");
+    printf("\n\n================\n\n");
+    printf("Please select an option (1-4): ");
     scanf("%d",&choice);
+
     if(choice==1)
     {
         n = deletenumber(number, n);
@@ -111,7 +106,7 @@ int main()
     
     else
     {
-        printf("\nInvalid choice. Please try again and insert a valid choice(i.e. 1,2,3).");
+        printf("\nInvalid choice. Please try again and insert a valid choice(i.e. 1,2,3,4).");
     }
 
   }
