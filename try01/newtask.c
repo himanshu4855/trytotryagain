@@ -9,7 +9,7 @@ int deletenumber(int number[],int n)
   }
   else
   {
-      printf("The last number you have entered %d is deleted successfully.",number[n-1]);
+      printf("The last number you have entered %d is deleted successfully.",number[n]);
       return n;
   }
 }
@@ -91,19 +91,17 @@ int main()
         if(n>0)
         n--;
     }
+
     else if(choice==2)
     {
         show(number,n);
     }
-    
-    
-    
+
     else if(choice==3)
     {
         n = insertprogram(number, n);
         
     }
-    
     
     else if(choice==4)
     {
